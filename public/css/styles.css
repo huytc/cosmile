@@ -194,3 +194,10 @@
     }
   }
   
+#video-container {
+	display: flex;
+}
+
+#video-container video {
+	margin: 10px;
+}
