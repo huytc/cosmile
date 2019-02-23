@@ -1,2 +1,2 @@
-# minathon-2019
+# Cosmile
 Minathon 2019 project by 4.0 Millennials
