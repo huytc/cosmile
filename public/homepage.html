@@ -10,7 +10,7 @@
     <title>PROFILE</title>
     <link href="css/homepage.css" rel="stylesheet">
     <script>
-    var a=0;
+    var listFriend = true;
     </script>
 </head>
 
@@ -20,7 +20,7 @@
             <div class="row">   
                 <div class="col-md-3 col-lg-3" style="height: 360px; display: flex; align-items: center; justify-content: center;">
                     <img src="images/puppy.jpeg" alt="Profile" style="width: 100%;">
-                </div>             
+                </div>
                 <div class="col-md-5 col-lg-5">
                     <div class="well profile">
                         <div class="col-sm-12">
@@ -39,12 +39,12 @@
                             <div class="col-xs-12 col-sm-4 emphasis">
                                 <h2><strong> 53 </strong></h2>                    
                                 <p><small>Friends</small></p>
-                                <button class="btn btn-success btn-block" onclick="chooseButton(1)"><span class="fa fa-plus-circle"></span> View Friends </button>
+                                <button class="btn btn-success btn-block" onclick="onClickHandle('frlst')"><span class="fa fa-plus-circle"></span> View Friends </button>
                             </div>
                             <div class="col-xs-12 col-sm-4 emphasis">
                                 <h2><strong>4</strong></h2>                    
                                 <p><small>Notification</small></p>
-                                <button class="btn btn-danger btn-block"><span class="fa fa-user"></span> Open! </button>
+                                <button class="btn btn-danger btn-block" onclick="onClickHandle('noti')"><span class="fa fa-user"></span> Open! </button>
                             </div>
                             <div class="col-xs-12 col-sm-4 emphasis">
                                 <h2><strong>24</strong></h2>                    
@@ -56,21 +56,35 @@
                         </div>
                     </div>    
                 </div>
-                <div class="col-md-3 col-lg-3">
+                <div id="frlst" class="col-md-3 col-lg-3" style="display: none">
                     <div>
                         <h3>Friends List</h3>
-                        <input type="text" placeholder="Search.." style="width: 200px;">
+                        <input type="text" placeholder="Search.." style="width: 200px; border-radius: 5px;">
                     </div>
                     <div class="list-friend" style="margin-top: 20px;">
                         <ul style="list-style-type:none;">
                             <li class="friend-item">
-                                <a Class="MenuLink">Tuan Phat</a>
+                                <a class="MenuLink" href="#">Tuan Phat</a>
                             </li>
                             <li class="friend-item">
-                                <a Class="MenuLink">Trung Tin</a>
+                                <a class="MenuLink" href="#">Trung Tin</a>
+                            </li>
+                            <li class="friend-item">
+                                <a class="MenuLink" href="#">Huy Trần</a>
+                            </li>
+                            <li class="friend-item">
+                                <a class="MenuLink" href="#">Minh Hiếu</a>
                             </li>
                         </ul>
                     </div>
+                </div>
+                <div id="noti" class="col-md-3 col-lg-3" style="display: none" >
+                    <div>
+                        <h3>Notification</h3>
+                    </div>
+                    <iframe width="420" height="315"
+                        src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -78,8 +92,10 @@
 </body>
 
 <script>
-    function chooseButton(id){
-        a= id;
-        window.alert(a);
+    function onClickHandle(id){
+        const x = document.getElementById(id); 
+        const y = document.getElementById(id === 'frlst'? 'noti': 'frlst');
+        x.style = "display: block;";
+        y.style = "display: none;";
     }
 </script>
