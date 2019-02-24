@@ -1,0 +1,98 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!------ Include the above in your HEAD tag ---------->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PROFILE</title>
+    <link href="css/homepage.css" rel="stylesheet">
+    <script>
+    var listFriend = true;
+    </script>
+</head>
+
+<body class="centered-form">
+    <div class="centered-form__form">
+        <div class="container">
+            <div class="row">   
+                <div class="col-md-3 col-lg-3" style="height: 360px; display: flex; align-items: center; justify-content: center;">
+                    <img src="images/puppy.jpeg" alt="Profile" style="width: 100%;">
+                </div>
+                <div class="col-md-5 col-lg-5">
+                    <div class="well profile">
+                        <div class="col-sm-12">
+                            <div class="col-xs-12 col-sm-12">
+                                <h2>Lê Huân</h2>
+                                <p><strong>Age: </strong> 21 </p>
+                                <p><strong>About: </strong> Student of Back Khoa University. </p>
+                                <p><strong>Hobbies: </strong>
+                                    <span class="tags">Reading</span> 
+                                    <span class="tags">Swimming</span>
+                                    <span class="tags">Game</span>
+                                </p>
+                            </div>  
+                        </div>            
+                        <div class="col-xs-12 divider text-center">
+                            <div class="col-xs-12 col-sm-4 emphasis">
+                                <h2><strong> 53 </strong></h2>                    
+                                <p><small>Friends</small></p>
+                                <button class="btn btn-success btn-block" onclick="onClickHandle('frlst')"><span class="fa fa-plus-circle"></span> View Friends </button>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 emphasis">
+                                <h2><strong>4</strong></h2>                    
+                                <p><small>Notification</small></p>
+                                <button class="btn btn-danger btn-block" onclick="onClickHandle('noti')"><span class="fa fa-user"></span> Open! </button>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 emphasis">
+                                <h2><strong>24</strong></h2>                    
+                                <p><small>Online</small></p>
+                                <div class="btn-group dropup btn-block">
+                                <button type="button" class="btn btn-primary"><span class="fa fa-gear"></span> Watch now! </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+                <div id="frlst" class="col-md-3 col-lg-3" style="display: none">
+                    <div>
+                        <h3>Friends List</h3>
+                        <input type="text" placeholder="Search.." style="width: 200px; border-radius: 5px;">
+                    </div>
+                    <div class="list-friend" style="margin-top: 20px;">
+                        <ul style="list-style-type:none;">
+                            <li class="friend-item">
+                                <a class="MenuLink" href="#">Tuan Phat</a>
+                            </li>
+                            <li class="friend-item">
+                                <a class="MenuLink" href="#">Trung Tin</a>
+                            </li>
+                            <li class="friend-item">
+                                <a class="MenuLink" href="#">Huy Trần</a>
+                            </li>
+                            <li class="friend-item">
+                                <a class="MenuLink" href="#">Minh Hiếu</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="noti" class="col-md-3 col-lg-3" style="display: none" >
+                    <div>
+                        <h3>Notification</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function onClickHandle(id){
+        const x = document.getElementById(id); 
+        const y = document.getElementById(id === 'frlst'? 'noti': 'frlst');
+        x.style = "display: block;";
+        y.style = "display: none;";
+    }
+</script>
