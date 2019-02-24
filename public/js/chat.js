@@ -31,9 +31,6 @@ peer.on('call', function(call) {
 		{ video: true, audio: false },
 		function(stream) {
 			call.answer(stream); // Answer the call with an A/V stream.
-			const video = jQuery(`<video id="${peerId}" width="240px" height="240px" autoplay></video>`);
-			jQuery('#video-container').append(video);
-			video[0].srcObject = stream;
 			// const localVideo = document.getElementById('local-video');
 			// localVideo.srcObject = stream;
 			// call.on('stream', function(remoteStream) {
@@ -183,4 +180,19 @@ videoCallButton.on('click', function() {
 	let params = jQuery.deparam(window.location.search);
 
 	socket.emit('call', peerId);
+	navigator.getUserMedia(
+		{ video: true, audio: false },
+		(stream) => {
+			const video = jQuery(`<video id="${peerId}" width="240px" height="240px" autoplay></video>`);
+			jQuery('#video-container').append(video);
+			video[0].srcObject = stream;
+		},
+		console.log
+	);
+});
+
+let watchPartyButton = jQuery('#watch-party');
+watchPartyButton.on('click', function() {
+	const video = jQuery('#video');
+	video.attr('hidden', false);
 });

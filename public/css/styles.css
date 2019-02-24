@@ -220,6 +220,7 @@ button:disabled {
 
 #video-container {
 	display: flex;
+	min-width: 50%;
 }
 
 #video-container video {
