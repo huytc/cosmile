@@ -17,11 +17,13 @@
     </div>
 
     <div class="chat__main">
-      <div class="chat__video" id="video-container">
-      </div>
       <ol id="messages" class="chat__messages"></ol>
+      <div>
+        <div class="chat__video" id="video-container">
+          <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/_OBlgSz8sSM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" hidden></iframe>
+        </div>
 
-      <div class="chat__footer">
+        <div class="chat__footer">
           <form id="message-form">
               <input name="message" type="text" placeholder="Message" autofocus autocomplete="off">
               <button>Send</button>
@@ -29,6 +31,7 @@
           <button id="send-location">Send Location</button>
           <button id="video-call">Video Call</button>
           <button id="watch-party">Watch Party</button>
+        </div>
       </div>
     </div>
 
